@@ -1,0 +1,35 @@
+<!--pages/marchant-order/marchant-order.wxml-->
+<view class='container'>
+  <view class='order-title'>
+    <view class='picker-line'>
+      <text>日期</text>
+      <picker mode="date" value="{{pickDate}}" bindchange="bindDateChange">
+        <view class="picker">
+          {{pickDate}}
+        </view>
+      </picker>
+    </view>
+    <view class='picker-line' wx:if="{{showMerchant}}">
+      <text>商户</text>
+      <picker  range="{{merchantList}}" range-key="name" value="{{merchantIndex}}" bindchange="bindMerchantChange">
+        <view class="picker">
+          {{pickMerchant}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class='order-content' wx:if="{{orderList.length}}">
+    <view bindtap="orderClick" wx:key="" wx:for="{{orderList}}" wx:for-index="idx" data-index="{{idx}}" wx:for-item="item" class="list-line" >
+      <view class='list-left'>
+        <view>{{item.name}}</view>
+        <view>{{item.orderTime}}</view>
+      </view>
+      <view class='list-right'>
+        {{item.price}}
+      </view>
+    </view>
+  </view>
+  <view wx:else style="height:calc(100% - 146rpx)">
+    <noData></noData>
+  </view>
+</view>

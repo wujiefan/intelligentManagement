@@ -1,0 +1,74 @@
+/**online-order.wxss**/
+/**search**/
+.online-order{
+  height: 100vh;
+}
+.search{
+  text-align:justify;
+  padding:40rpx 40rpx ;
+  border-bottom: 2rpx solid #ddd;
+}
+.double{
+  width: 50%;
+  display:inline-block;
+  box-sizing:border-box;
+  font-size:26rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(34,34,34,1);
+  line-height:40rpx;
+}
+.double-two{
+  text-align:right;
+}
+.search-pi{
+  display:inline-block;
+  border:2rpx solid #C3C3C3;
+  border-radius:10rpx;
+  padding:0 10rpx;
+  width:72%;
+  font-size:24rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(74,74,74,1);
+  height: 60rpx;
+  line-height: 20rpx;
+  margin-left: 10rpx;
+  text-align:left;
+}
+/**search**/
+/**list**/
+.same{
+  display:inline-block;
+  
+}
+.item{
+  padding: 20rpx 40rpx;
+  border-bottom: 2rpx solid #ddd;
+  line-height: 45rpx;
+}
+.item-left{
+  width:65%;
+}
+.item-right{
+  width:35%;
+  text-align:right;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(0,201,79,1);
+  vertical-align:top;
+  padding:26rpx 0;
+}
+.item-name{
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(34,34,34,1);
+}
+.item-time{
+  font-size:24rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(155,155,155,1);
+}

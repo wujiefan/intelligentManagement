@@ -1,0 +1,34 @@
+{
+  "pages": [
+    "pages/member/member-manage",
+    "pages/dish/dish-library",
+    "pages/dish/dish-manage",
+    "pages/dish/dish-addtype",
+    "pages/index/index",
+    "pages/turnover/turnover",
+    "pages/order-quantity/order-quantity",
+    "pages/online-order/online-order",
+    "pages/load/load",
+    "pages/login/login",
+    "pages/dish/dish-add",
+    "pages/merchant/merchant-list",
+    "pages/canteen/canteen-detail",
+    "pages/canteen/canteen-list",
+    "pages/recharge-data/recharge-data",
+    "pages/password/password",
+    "pages/equipment/equipment-list",
+    "pages/merchant/merchant-detail",
+    "pages/personal/personal",
+    "pages/merchant-order/merchant-order",
+    "pages/online-order-detail/online-order-detail",
+    "pages/logs/logs",
+    "pages/merchant-order-detail/merchant-order-detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#E7E7E7",
+    "navigationBarTitleText": "效准智能管理系统",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

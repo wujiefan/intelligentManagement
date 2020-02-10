@@ -1,0 +1,27 @@
+.header{
+    width: 750rpx;
+    padding: 20rpx;
+    box-sizing: border-box;
+    display: flex;
+}
+.search-box{
+    width: 646rpx;
+    height: 60rpx;
+    padding-left: 70rpx;
+    background: #F8F8F8;
+    border-radius: 60rpx;
+}
+.search-input{
+    font-size: 24rpx;
+    width: 90%;
+    height: 60rpx;
+    line-height: 60rpx;
+    vertical-align: middle;
+}
+.search-icon{
+    width: 30rpx;
+    height: 30rpx;
+    position: absolute;
+    left: 45rpx;
+    top: 35rpx;
+}

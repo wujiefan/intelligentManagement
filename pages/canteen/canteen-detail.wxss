@@ -1,0 +1,29 @@
+/* pages/canteen/canteen-detail.wxss */
+.container{
+  display: block;
+  height: 100vh;
+  padding: 0;
+}
+.content{
+  padding: 20rpx;
+}
+.detail-line{
+  padding: 20rpx;
+}
+.detail-line-left{
+  width: 200rpx;
+  text-align: right;
+}
+.detail-line-right{
+  width: calc(100% - 200rpx);
+}
+.detail-line-right input{
+  width: 80%;
+}
+.bottom{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding: 20rpx;
+  box-sizing: border-box;
+}

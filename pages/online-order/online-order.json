@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "线下就餐订单",
+    "usingComponents": {
+      "noData": "../../components/no-data"
+    }
+}

@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<view class="container index">
+  <view class="header">
+    <open-data type="userAvatarUrl"></open-data>
+    <view class="user-info">
+      <picker value="{{departmentIndex}}" range="{{departmentList}}" range-key="name" bindchange="departmentChange">
+        <view class="picker">
+          {{departmentList[departmentIndex].name}}
+          <view class="arrow-down"></view>
+        </view>
+      </picker>
+      
+      <view class="user-name">王小萌</view>
+    </view>
+  </view>
+  <view class="middle">
+    <view class="business-data">
+      <navigator url="/pages/turnover/turnover" class="business-data-item">
+        <view>4021.00</view>
+        <view>营业额</view>
+      </navigator>
+      <navigator url="/pages/order-quantity/order-quantity" class="business-data-item">
+        <view>1080</view>
+        <view>订单数</view>
+      </navigator>
+      <navigator url="/pages/recharge-data/recharge-data" class="business-data-item">
+        <view>4021.00</view>
+        <view>会员充值</view>
+      </navigator>
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="nav-list">
+      <navigator class="nav-item" url="{{item.link}}" wx:for="{{navList}}" wx:key="id" wx:if="{{item.type}}">
+        <image mode="scaleToFill" src="{{item.icon}}"></image>
+        <view>{{item.name}}</view>
+      </navigator>
+    </view>
+  </view>
+</view>

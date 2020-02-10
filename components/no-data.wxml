@@ -1,0 +1,7 @@
+<!--components/no-data.wxml-->
+<view class="no-data">
+  <view>
+    <image src='../image/no-data.png'></image>
+    <text>没有数据</text>
+  </view>
+</view>

@@ -1,0 +1,142 @@
+/* pages/dish/dish-add.wxss */
+.submit-form {
+    width: 750rpx;
+    height: 100%;
+    background: #F8F8F8;
+}
+
+.header {
+    width: 750rpx;
+    padding: 0 20rpx;
+    background: #FFF;
+    box-sizing: border-box;
+}
+.header::after{
+    content: '';
+    display: table;
+}
+
+.form-line {
+    display: flex;
+    height: 90rpx;
+    line-height: 90rpx;
+    border-bottom: 1px solid #F8F8F8;
+    box-sizing: border-box;
+}
+
+.form-line-name {
+    width: 140rpx;
+    margin-right: 20rpx;
+    font-size: 28rpx;
+}
+
+.form-line-value {
+    flex: 1;
+    font-size: 26rpx;
+    display: flex;
+    align-items: center;
+}
+
+.form-line-value>text {
+    margin-right: 10rpx;
+}
+
+.form-line-value>input,
+.form-line-value>picker{
+    width: 90%;
+}
+.arrow {
+    position: relative;
+}
+
+.arrow::after {
+    content: '';
+    width: 20rpx;
+    height: 20rpx;
+    border: 1rpx solid transparent;
+    border-right-color: #B8B8B8;
+    border-bottom-color: #B8B8B8;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 30rpx;
+    right: 10rpx;
+}
+
+.color-red {
+    color: #F8504A;
+}
+
+.ui-radio radio,
+.ui-radio checkbox {
+    display: none;
+}
+
+.label {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 20rpx 0;
+}
+
+.ui-radio {
+    border: 1px solid #5581FE;
+    border-radius: 30rpx;
+    width: 160rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+    margin: 10rpx 0;
+    white-space: nowrap;
+    font-size: 22rpx;
+    color: #5581FE;
+    box-sizing: border-box;
+}
+.ui-radio+.ui-radio{
+    margin-left: 20rpx;
+}
+
+.ui-radio.active {
+    background: linear-gradient(90deg, rgba(85, 129, 254, 1) 0%, rgba(125, 164, 255, 1) 100%);
+    color: #fff;
+}
+
+.middle{
+    width: 750rpx;
+    padding: 20rpx;
+    box-sizing: border-box;
+}
+.image-label{
+    width: 100%;
+    background: #FFF;
+    margin-top: 20rpx;
+}
+.image-label-name{
+    padding: 20rpx;
+    font-size: 28rpx;
+    box-sizing: border-box;
+}
+.image-label-value{
+    padding: 20rpx 10rpx;
+}
+.image-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+.image-item{
+    width: 118rpx;
+    height: 118rpx;
+    margin: 0 10rpx 20rpx 10rpx;
+}
+.bottom{
+    margin: 80rpx 0;
+    padding: 0 20rpx;
+}
+.btn-bottom{
+    height: 82rpx;
+    line-height: 82rpx;
+    background: linear-gradient(90deg,rgba(85,129,254,1) 0%,rgba(125,164,255,1) 100%);
+    text-align: center;
+    font-size: 32rpx;
+    color: #FFF;
+    border-radius: 6rpx;
+}

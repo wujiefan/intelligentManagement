@@ -1,0 +1,29 @@
+<!--pages/member/member-manage.wxml-->
+<view class="container">
+    <switch-canteen />
+    <view class="show-list">
+        <view class="show-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{memberList}}" wx:key="id">
+            <view class="content">
+                <!-- <image class="image"></image> -->
+                <view class="content-line">
+                    <view class="name">
+                        {{item.memberName}}
+                        <text class="vip">V3</text>
+                    </view>
+                    <view class="info">
+                        正常
+                    </view>
+                </view>
+                <view class="content-line m-top10">
+                    <view class="tel">{{item.telno}}</view>
+                    <view class="money">{{tools.toFix(item.sumMoney)}}</view>
+                </view>
+            </view>
+            <view class="button">
+                <view class="btn bg-b" data-id="{{item.id}}" catchtap="editItem">编辑</view>
+                <view wx:if="{{item.serialNumber!='001'}}" class="btn bg-r" data-id="{{item.id}}" data-name="{{item.name}}" catchtap="removeItem">删除</view>
+            </view>
+        </view>
+    </view>
+</view>
+<wxs src="../../wxs/subutil.wxs" module="tools" />

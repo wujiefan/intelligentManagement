@@ -1,0 +1,8 @@
+<view class="switch-canteen" wx:if="{{isShow}}">
+    <picker value="{{canteenIndex}}" range="{{canteenList}}" range-key="diningName" bindchange="canteenChange">
+        <view class="picker">
+            <image mode="scaleToFill" src="/image/menu.png" class="icon-menu"></image>
+            {{canteenList[canteenIndex].diningName}}
+        </view>
+    </picker>
+</view>

@@ -1,0 +1,29 @@
+
+var filters = {
+    
+    toFix: function (value) {
+        if(value){
+            return Number(value).toFixed(2)
+        }
+    },
+    sub:function(val){
+        if(val){
+            if (val.length == 0 || val == undefined) {
+                return;
+            }
+            if (val.length > 8) {
+                return val.substring(0, 8) + "...";
+            } else {
+                return val;
+            }
+        }
+    },
+    inArray:function(val,array){
+        return array.indexOf(val)>-1
+    }
+}
+module.exports = {
+  toFix: filters.toFix,
+  sub:filters.sub,
+  inArray:filters.inArray,
+}

@@ -1,0 +1,75 @@
+<view class="container">
+    <search-bar prop-placeholder="{{placeholder}}" bind:searchChange="searchChange">
+        <view class="add-box">
+            <image class="add-icon" mode="scaleToFill" src="/image/add-icon.png" bindtap="toggleNav"></image>
+            <view class="nav-list {{showNav?'show':''}}">
+                <view class="nav-item" wx:for="{{navList}}" wx:key="name" bindtap="{{item.event}}">
+                    <image src="{{item.icon}}" mode="scaleToFill"></image>
+                    <view>{{item.name}}</view>
+                </view>
+            </view>
+        </view>
+    </search-bar>
+    <!-- <view class="header">
+        <view class="search-box">
+            <image class="search-icon" src="/image/search.png" mode="scaleToFill"></image>
+            <input class="weui-input" auto-focus placeholder="请输入菜品名称"/>
+        </view>
+        <view class="add-box">
+            <image class="add-icon" mode="scaleToFill" src="/image/add-icon.png" bindtap="toggleNav"></image>
+            <view class="nav-list {{showNav?'show':''}}">
+                <view class="nav-item" wx:for="{{navList}}" wx:key="name" bindtap="{{item.event}}">
+                    <image src="{{item.icon}}" mode="scaleToFill"></image>
+                    <view>{{item.name}}</view>
+                </view>
+            </view>
+        </view>
+    </view> -->
+    <view class="middle">
+        <scroll-view scroll-y="true"  class="type-box">
+            <view class="type-list">
+                <view class="type-item {{typeId === item.id?'active':''}}" wx:for="{{typeList}}" wx:key="id" data-id="{{item.id}}" bindtap="changeType">{{item.name}}</view>
+            </view>
+        </scroll-view>
+        <scroll-view scroll-y="true"  class="content-box" bindscrolltolower="getNewPage">
+            <view class="content-list">
+                <view class="content-item" wx:for="{{dishList}}" wx:key="dishId">
+                    <view class="item-check {{multipleSelect?'show':''}}">
+                        <image mode="scaleToFill" src="{{tools.inArray(item.dishId,checkedList)?'/image/check-checked.png':'/image/check-unchecked.png'}}" data-id="{{item.dishId}}" bindtap="checkItem"></image>
+                    </view>
+                    <image class="item-left" src="{{item.dishHeaderUrl}}" mode="scaleToFill"></image>
+                    <view class="item-right">
+                        <view>{{item.dishName}}</view>
+                        <view>¥{{tools.toFix(item.dishPrice)}}</view>
+                        <view>
+                            <view class="item-btn" data-id="{{item.dishId}}" bindtap="toEdit">编辑</view>
+                            <view class="item-btn" data-index="{{index}}" data-flag="{{item.dishPutaway}}" data-id="{{item.dishId}}" bindtap="changePutaway">{{item.putawayFlag?'下架':'上架'}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="bottom {{multipleSelect?'show':''}}">
+        <view class="bottom-left">
+            已选择 <text>{{checkedList.length}}</text> 个菜
+        </view>
+        <view class="buttom-btn bg-b {{handleType==2?'show':''}}" bindtap="dishMultipleDown">下架</view>
+        <view class="buttom-btn bg-b {{handleType==1?'show':''}}" bindtap="dishMultipleUp">上架</view>
+        <view class="buttom-btn bg-b {{handleType==3?'show':''}}" bindtap="dishMultipleMove">移动</view>
+    </view>
+</view>
+<cover-view class="move-type {{showMove?'show':''}}">
+    <cover-view class="cover-header">
+        <cover-view class="cover-back">
+            <cover-view class="arrow-down" bindtap="closeMove"></cover-view>
+        </cover-view>
+        <cover-view class="move-type-list">
+            <cover-view class="move-type-item {{moveTypeId === item.id?'active':''}}" wx:for="{{typeList}}" wx:key="id"  data-id="{{item.id}}" bindtap="changeMoveType">{{item.name}}</cover-view>
+        </cover-view>
+    </cover-view>
+    <cover-view class="cover-bottom">
+        <cover-view class="btn-cover-bottom" bindtap="moveConfirm">确认</cover-view>
+    </cover-view>
+</cover-view>
+<wxs src="../../wxs/subutil.wxs" module="tools" />

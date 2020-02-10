@@ -1,0 +1,99 @@
+/* pages/order-quantity/order-quantity.wxss */
+.container{
+    background: #EFEFEF;
+}
+.header{
+    width: 750rpx;
+    padding: 40rpx;
+    text-align: left;
+    box-sizing: border-box;
+    background: #FFF;
+}
+.header .picker{
+    line-height:40rpx;
+}
+.middle{
+    width: 750rpx;
+    margin-top: 20rpx;
+    background: #FFF;
+    padding: 20rpx;
+    box-sizing: border-box;
+}
+.search-type{
+    display: flex;
+    font-size:28rpx;
+    justify-content: space-around;
+}
+.search-item{
+    width: 216rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    color: #5581FE;
+    border: 1px solid #5581FE;
+    border-radius: 30rpx;
+    text-align: center;
+}
+.search-item.active{
+    background:linear-gradient(90deg,rgba(85,129,254,1) 0%,rgba(125,164,255,1) 100%);
+    color: #FFF;
+}
+
+.date-pick{
+    margin-top: 50rpx;
+    display: flex;
+    justify-content: space-between;
+    font-size: 28rpx;
+    font-weight:bold;
+}
+.date-pick .picker{
+    color: #919191;
+    font-size: 26rpx;
+    font-weight: normal;
+    line-height: 44rpx;
+}
+
+.date-pick .picker image{
+    width: 44rpx;
+    height: 44rpx;
+    vertical-align: top;
+}
+.pie-box{
+    width: 750rpx;
+    height: 600rpx;
+    margin-top: 20rpx;
+}
+
+.bottom{
+    width: 750rpx;
+    margin-top: 20rpx;
+    background: #FFF;
+    padding: 20rpx;
+    box-sizing: border-box;
+}
+.trend-type-pick{
+    margin-top: 50rpx;
+    display: flex;
+    justify-content: space-between;
+    font-size: 28rpx;
+    font-weight:bold;
+}
+.trend-type-pick .picker{
+    width: 200rpx;
+    height: 56rpx;
+    line-height: 56rpx;
+    color: #7A7A7A;
+    font-size:28rpx;
+    border: 1px solid #7a7a7a;
+    border-radius: 28rpx;
+    text-align: center;
+    box-sizing: border-box;
+}
+.trend-type-pick .arrow-down{
+    border-right-color: #7a7a7a;
+    border-bottom-color: #7a7a7a;
+}
+.bar-box{
+    width: 750rpx;
+    height: 1000rpx;
+    min-height: 200rpx;
+}

@@ -1,0 +1,74 @@
+<view class="container">
+    <form class="submit-form" bindsubmit="formSubmit">
+        <view class="header">
+            <view class="form-line">
+                <view class="form-line-name">菜品名称：</view>
+                <view class="form-line-value">
+                    <input class="f-32" name="dishName" placeholder='请输入' placeholder-style='color:#DDD;' value='{{dishInfo.dishName}}'/>                
+                </view>
+            </view>
+            <view class="form-line">
+                <view class="form-line-name">菜品价格：</view>
+                <view class="form-line-value color-red">
+                    <text>¥</text>
+                    <input class="f-32" name="dishPrice" placeholder='请输入' placeholder-style='color:#DDD;' value='{{dishInfo.dishPrice}}'/>                
+                </view>
+            </view>
+            <view class="form-line">
+                <view class="form-line-name">餐点：</view>
+                <view class="form-line-value arrow">
+                    <!-- <input class="f-32" name="mealTypeId" placeholder='请输入' placeholder-style='color:#DDD;' value='{{dishInfo.mealTypeId}}'/>-->
+                    <picker name="mealTypeId" value="{{mealTypeIndex}}" range="{{mealType}}" range-key="name" bindchange="mealTypeChange">
+                        <view class="picker">
+                            {{mealType[mealTypeIndex].name}}
+                        </view>
+                    </picker>
+                </view>
+            </view>
+            <view class="radio-box">
+            <checkbox-group bindchange="checkboxChange" name="dishType">
+                <view class='label'>
+                    <label class="ui-radio {{item.checked?'active':''}}" wx:for="{{checkboxItems}}" wx:key="id">
+                        <checkbox value="{{item.value}}" checked="{{item.checked}}" />
+                        <text class="text">{{item.name}}</text>
+                    </label>
+                </view>
+            </checkbox-group>
+                
+            </view>
+        </view>
+        <view class="middle">
+            <view class="image-label">
+                <view class="image-label-name">
+                    展示图
+                </view>
+                <view class="image-label-value">
+                    <view class="image-list">
+                        <view class="iamge-item" wx:for="{{showImages}}" wx:key="id">
+                            <!-- <image class="image-item" mode="scaleToFill" data-id="{{item.id}}" src="{{item.url}}"></image> -->
+                            <view>{{item.id}}{{item.url}}</view>
+                        </view>
+                        
+                        <image wx:if="{{showImages.length < 3}}" class="image-item" src="/image/image-upload.png" mode="scaleToFill" data-type="showImages" bindtap="chooseImage"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="image-label">
+                <view class="image-label-name">
+                    识别图
+                </view>
+                <view class="image-label-value">
+                    <view class="image-list">
+                        <view class="iamge-item"wx:for="{{recognitionImages}}" wx:key="id">
+                            <image class="image-item" mode="scaleToFill" data-id="{{item.id}}" src="{{item.url}}"></image>
+                        </view>
+                        <image class="image-item" src="/image/image-upload.png" mode="scaleToFill" data-type="recognitionImages"  bindtap="chooseImage"></image>
+                    </view>   
+                </view>
+            </view>
+        </view>
+        <view class="bottom">
+            <button class="btn-bottom" form-type="submit">提交</button>
+        </view>
+    </form>
+</view>

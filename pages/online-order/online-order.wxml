@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<wxs src="../../wxs/subutil.wxs" module="tools" />
+<view class="online-order">
+  <!-- search start-->
+  <view class="search">
+    <view class="double">
+      <text class="search-name">日期</text>
+      <picker mode="date" value="{{timeNow}}" bindchange="bindDateChange" class="search-pi">
+        <text class="pi-border">
+          {{timeNow}}
+        </text>
+      </picker>
+    </view>
+    <view class="double double-two" wx:if="{{isShow}}">
+      <text>食堂</text>
+      <picker bindchange="bindCanteenChange" value="{{dining[diningId].name}}" range="{{dining}}" range-key="{{'name'}}" class="search-pi">
+        <text class="pi-border">
+         {{tools.sub(dining[diningId].name)}}
+        </text>
+      </picker>
+    </view>
+    
+  </view>
+  <!-- search end-->
+  <!-- list start-->
+  <view class="list" wx:if="{{listData.length}}">
+    <view class="item" wx:for="{{listData}}"  wx:key="{{item.id}}">
+      <view bindtap="toDetail" data-id="{{item.id}}">
+         <view class="same item-left">
+          <view class="item-name">{{item.memberName}}</view>
+          <view class="item-time">{{item.payTime}}</view>
+        </view>
+        <view class="same item-right">
+          {{tools.toFix(item.price)}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:else style="height:calc(100% - 146rpx)">
+    <noData></noData>
+  </view>
+  <!-- list end-->
+</view>

@@ -1,0 +1,8 @@
+<!--components/search-bar.wxml-->
+<view class="header">
+    <view class="search-box">
+        <image class="search-icon" src="/image/search.png" mode="scaleToFill"></image>
+        <input class="search-input"auto-focus placeholder="请输入菜品名称" bindinput="inputChange"/>
+    </view>
+    <slot></slot>
+</view>

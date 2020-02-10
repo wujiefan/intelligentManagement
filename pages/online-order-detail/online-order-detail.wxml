@@ -1,0 +1,81 @@
+<!--index.wxml-->
+<view class="online-order">
+  <!-- item-one start-->
+  <!--  wx:for="{{detailData}}" wx:key="{{item.id}}"-->
+  <view class="item-one">
+    <view class="title-aside">总金额</view>
+    <view class="item-sum">{{totalPrice}}</view>
+  </view>
+  <!-- item-one end-->
+  <!-- item-two start-->
+  <view class="item-two">
+    <view class="title-center">订单信息</view>
+    <view class="title-aside">下单用户</view>
+    <view class="item-right">{{detailData.memberName}}</view>
+    <view class="title-aside">订单编号</view>
+    <view class="item-right">{{detailData.serialNum}}</view>
+    <view class="title-aside">订单状态</view>
+    <view class="item-right">{{detailData.status==1?'未支付':
+                              (detailData.status==3?'支付成功':
+                              (detailData.status==5?'已退款':''))}}</view>
+    <view class="title-aside">下单时间</view>
+    <view class="item-right">{{detailData.orderTime}}</view>
+    <view class="title-aside">支付时间</view>
+    <view class="item-right">{{detailData.payTime}}</view>
+    <view class="title-aside">结算方式</view>
+    <view class="item-right">{{detailData.settleMode==1?'线上支付':(detailData.settleMode==2?'智慧结算':
+    (detailData.settleMode==3?'快速结算':
+    (detailData.settleMode==4?'快速结算输入金额':
+    (detailData.settleMode==5?'扫码结算':''))))}}
+    </view>
+    <view class="title-aside">支付账户</view>
+    <view class="item-right">{{detailData.paymentMode==1?'微信支付':(detailData.paymentMode==3?'钱包支付':(detailData.paymentMode==4?'支付宝':''))}}</view>
+    <view class="title-aside">支付方式</view>
+    <view class="item-right">{{detailData.offlinePayment==0?'账户二维码支付':(detailData.offlinePayment==1?'虚拟卡支付':
+    (detailData.offlinePayment==2?'IC卡支付':
+    (detailData.offlinePayment==3?'刷脸支付':
+    (detailData.offlinePayment==4?'聚合支付':''))))}}</view>
+    <view class="title-aside">所属食堂</view>
+    <view class="item-right">{{detailData.diningName}}</view>
+    <view class="title-aside">设备编号</view>
+    <view class="item-right">{{detailData.deviceSerialNum||''}}</view>
+    <view class="title-aside">异常订单差额</view>
+    <view class="item-right">{{differentPrice}}元</view>
+  </view>
+  <!-- item-two end-->
+  <!-- item-two start-->
+  <view class="item-two">
+    <view class="title-center">菜品信息</view>
+    <view class="title-aside half">菜品名称</view>
+    <view class="title-aside quarter text-center">数量</view>
+    <view class="title-aside quarter text-right">金额(元)</view>
+    <view wx:for="{{detailData.oldDishes||detailData.dishes}}" wx:key="{{item.id}}">
+      <view class="item-right half text-left">{{item.dishName}}</view>
+      <view class="item-right quarter text-center">{{item.quantity}}</view>
+      <view class="item-right quarter">{{item.money}}</view>
+    </view>
+    <view class="p-right">总金额：{{detailData.oldDishes.length>0?oldTotalPrice:totalPrice}}</view>
+  </view>
+  <!-- item-two end-->
+  <!-- item-two start-->
+  <view class="item-two" wx:if="{{detailData.oldDishes.length>0}}">
+    <view class="title-center">菜品更正</view>
+    <view class="title-aside">审核人员</view>
+    <view class="item-right">{{detailData.auditor||'-'}}</view>
+    <view class="title-aside">更正时间</view>
+    <view class="item-right">{{detailData.updateTime||'-'}}</view>
+    <view class="item-border"></view>
+    <!--
+    <view class="title-center ">菜品信息</view>-->
+    <view class="title-aside half">菜品名称</view>
+    <view class="title-aside quarter text-center">数量</view>
+    <view class="title-aside quarter text-right">金额(元)</view>
+    <view wx:for="{{detailData.dishes}}" wx:key="{{item.id}}">
+      <view class="item-right half text-left">{{item.dishName}}</view>
+      <view class="item-right quarter text-center">{{item.quantity}}</view>
+      <view class="item-right quarter">{{item.money}}</view>
+    </view>
+    <view class="p-right">总金额：{{detailData.oldDishes.length>0?totalPrice:''}}</view>
+  </view>
+  <!-- item-two end-->
+</view>

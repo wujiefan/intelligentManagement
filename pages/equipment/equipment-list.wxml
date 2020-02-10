@@ -1,0 +1,46 @@
+<!--pages/equipment/equipment-list.wxml-->
+<view class='container'>
+  <view class='content b-f'>
+    <view class='list-line dis-flex' wx:for="{{equipmentList}}" wx:key="id">
+      <view class='line-left'>
+        <view>{{item.serialNum}}</view>
+        <view class="col-9 f-28">{{item.diningName || '-'}}</view>
+      </view>
+      <view class='line-middle f-30 {{item.status == 0 ? "col-green" : "col-m"}}'>{{status[item.status]}}</view>
+      <view bindtap="toEdit" class='line-right f-30 col-blue' data-id="{{item.id}}" data-status="{{item.status}}" data-dining="{{item.diningName || ''}}">
+        编辑
+      </view>
+    </view>
+  </view>
+</view>
+<view class="equipment-dialog {{ showDialog ? 'equipment-dialog-show' : '' }}">
+  <view class="equipment-dialog-mask" bindtap="toggleDialog" />
+  <view class='equipment-dialog-container'>
+    <view style='padding:20rpx;'>
+      <view class='detail-line dis-flex' wx:if="{{userKind.kind == 5}}">
+        <view class='detail-line-left f-32'>所属食堂：</view>
+        <view class='detail-line-right f-32'>
+          <picker class="{{curCanteen?'b-d':''}}" range="{{canteenList}}" range-key="name" value="{{canteenIndex}}" bindchange="canteenChange" disabled="{{curCanteen}}">
+            <view class="picker">
+              {{canteenList[canteenIndex].name}}
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class='detail-line dis-flex'>
+        <view class='detail-line-left f-32'>状态：</view>
+        <view class='detail-line-right f-32'>
+          <picker  range="{{status}}" value="{{statusIndex}}" bindchange="statusChange">
+            <view class="picker">
+              {{status[statusIndex]}}
+            </view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <view  class="equipment-dialog-bottom dis-flex flex-x-around">
+      <text class="flow-btn" bindtap='confirm'>确定</text>
+      <text class="flow-btn" bindtap='cancel'>取消</text>
+    </view>
+  </view>
+</view>

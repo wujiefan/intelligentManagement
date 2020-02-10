@@ -1,0 +1,67 @@
+/* pages/dish/dish-library.wxss */
+.show-list{
+    width: 750rpx;
+}
+.show-item{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 10rpx solid #F8F8F8;
+    padding: 30rpx 20rpx;
+    box-sizing: border-box;
+    position: relative;
+}
+.show-item .content{
+    width: 100%;
+    transition: all 0.4s;
+}
+.show-item .content::after{
+    content: '';
+    width: 20rpx;
+    height:20rpx;
+    border:4rpx solid transparent;
+    border-right-color: #919191;
+    border-bottom-color: #919191;
+    display: inline-block;
+    transform:rotate(-45deg) translateY(-10rpx);
+    position:absolute;
+    top: 50%;
+    right: 20rpx;
+}
+.show-item .name{
+    font-size: 32rpx;
+    margin-bottom: 10rpx;
+}
+.show-item .info{
+    font-size: 26rpx;
+    color:#919191;
+}
+.show-item .button{
+    width: 180rpx;
+    height: 148rpx;
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: -180rpx;
+    transition: all 0.4s;
+}
+.show-item .btn{
+    flex: 1;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28rpx;
+}
+.touch-move-active .button{
+    right: 0;
+}
+.touch-move-active .content{
+    transform: translateX(-180rpx);
+}
+.bg-b{
+    background: #5581FE;
+}
+.bg-r{
+    background: #FF5700;
+}

@@ -1,0 +1,16 @@
+<!--pages/marchant-order-detail/marchant-order-detail.wxml-->
+<view class='container'>
+  <view class='detail-top'>
+    <text>总金额</text>
+    <text>{{price}}</text>
+  </view>
+  <view class='detail-content'>
+    <view class='detail-title'>订单详情</view>
+    <view class='detail-list'>
+      <view wx:key="" wx:for="{{detailList}}" wx:for-index="idx" data-index="{{idx}}" wx:for-item="item" class="list-line">
+        <view>{{item.name}}</view>
+        <view>{{item.value}}</view>
+      </view>
+    </view>  
+  </view>
+</view>

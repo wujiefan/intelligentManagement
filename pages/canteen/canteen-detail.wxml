@@ -1,0 +1,63 @@
+<view class="container">
+  <form bindsubmit="formSubmit">
+    <view class='content'>
+      <view class='detail-line dis-flex'>
+        <view class='detail-line-left f-32'>食堂名称：</view>
+        <view class='detail-line-right'>
+          <input class="f-32" name="name" placeholder='请输入食堂名称' placeholder-style='color:#DDD;' value='{{detailInfo.name}}'/>
+        </view>
+      </view>
+      <view class='detail-line dis-flex'>
+        <view class='detail-line-left f-32'>管理员：</view>
+        <view class='detail-line-right'>
+          <input class="f-32 {{canteenId?'b-d':''}}" name="contacts" placeholder='请输入管理员名称' placeholder-style='color:#DDD;' value='{{detailInfo.contacts}}' disabled="{{canteenId}}"/>
+        </view>
+      </view>
+      <view class='detail-line dis-flex'>
+        <view class='detail-line-left f-32'>手机号码：</view>
+        <view class='detail-line-right'>
+          <input class="f-32 {{canteenId?'b-d':''}}" type="number" name='telno' placeholder='请输入管理员手机号' placeholder-style='color:#DDD;' value='{{detailInfo.telno}}' disabled="{{canteenId}}"/>
+        </view>
+      </view>
+      <view class='detail-line dis-flex'>
+        <view class='detail-line-left f-32'>食堂地址：</view>
+        <view class='detail-line-right'>
+          <input class="f-32" name='address' placeholder='请输入食堂地址' placeholder-style='color:#DDD;' value='{{detailInfo.address}}'/>
+        </view>
+      </view>
+      <view class='detail-line dis-flex'>
+        <view class='detail-line-left f-32'>可消费人员：</view>
+        <view class='detail-line-right'>
+          <checkbox-group name='notMemberPay'>
+            <label class="checkbox" class='f-32'>
+              <checkbox value="true" class="check-box" checked="{{detailInfo.notMemberPay}}" />
+              非会员消费
+            </label>
+          </checkbox-group>
+          <checkbox-group>
+            <label class="checkbox" class='f-32'>
+              <checkbox value="true" class="check-box" checked="{{true}}" disabled='{{true}}'/>
+              {{departmentName}}
+            </label>
+          </checkbox-group>
+          <view class="tips col-m f-28">默认为整个单位所有人员都可消费</view>
+        </view>
+      </view>
+      <view class='detail-line dis-flex'>
+        <view class='detail-line-left f-32'>第三方支付：</view>
+        <view class='detail-line-right'>
+          <checkbox-group name='thirdPartyPay'>
+            <label class="checkbox" wx:for="{{payMethod}}" wx:key="name" wx:for-item="payMethod" class='f-32'>
+              <checkbox value="{{payMethod.name}}" class="check-box" style="margin-left:20rpx" checked="{{payMethod.checked}}" />
+              {{payMethod.value}}
+            </label>
+          </checkbox-group>
+        </view>
+      </view>
+    </view>
+    <view class='bottom'>
+      <button form-type="submit" class='btn-primary'>保存</button>
+    </view>
+  </form>
+  
+</view>

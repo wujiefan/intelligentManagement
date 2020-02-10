@@ -1,0 +1,65 @@
+/**app.wxss**/
+/* common.wxss */
+@import "/utils/common.wxss";
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+} 
+
+.btn-primary{
+    display: inline-block;
+    width:100%;
+    height:40px;
+    line-height: 40px;
+    background: -webkit-gradient(linear,right top, left top,from(rgba(125,164,255,1)),to(rgba(85,129,254,1)));
+    background: -webkit-linear-gradient(right,rgba(125,164,255,1) 0%,rgba(85,129,254,1) 100%);
+    background: -moz-linear-gradient(right,rgba(125,164,255,1) 0%,rgba(85,129,254,1) 100%);
+    background: linear-gradient(270deg,rgba(125,164,255,1) 0%,rgba(85,129,254,1) 100%);
+    font-size: 18px;
+    color:#FFF;
+    text-align: center;
+    font-weight: 500;
+}
+.check-box{
+  transform: scale(0.8,0.8);
+  vertical-align: top;
+}
+
+.flow-btn {
+  width:180rpx;
+  background-color:#5581FE;
+  color:#fff;
+  text-align:center;
+  line-height:70rpx;
+  display: inline-block;
+}
+
+.arrow-down{
+  width: 20rpx;
+  height:20rpx;
+  border:1rpx solid transparent;
+  border-right-color: #FFF;
+  border-bottom-color: #FFF;
+  display: inline-block;
+  transform:rotate(45deg);
+  position:relative;
+  top: -5rpx;
+  left: 10rpx;
+}
+
+.menu-icon{
+	display: inline-block;
+  width: 50rpx;
+	height: 8rpx;
+	border-top: 8rpx solid #3799F9;
+	border-bottom: 8rpx solid #3799F9;
+	background-color: #3799F9;
+	padding: 8rpx 0;
+  background-clip:content-box;
+  vertical-align:top;
+}

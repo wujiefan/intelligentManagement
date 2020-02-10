@@ -1,0 +1,13 @@
+<view class="container">
+    <form class="submit-form" bindsubmit="formSubmit">
+        <view class="form-line">
+            <view class="form-line-name">目录名称：</view>
+            <view class="form-line-value">
+                <input class="f-32" name="name" placeholder='请输入' placeholder-style='color:#DDD;' value='{{dishInfo.dishName}}'/>                
+            </view>
+        </view>
+        <view class="bottom">
+            <button class="btn-bottom" form-type="submit">提交</button>
+        </view>
+    </form>
+</view>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "商户订单",
+  "usingComponents": {
+    "noData": "../../components/no-data"
+  }
+}

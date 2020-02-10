@@ -1,0 +1,17 @@
+<view class="container">
+    <view class="show-list">
+        <view class="show-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{dishLibraryList}}" wx:key="id">
+            <view class="content">
+                <view class="name">{{item.name}}</view>
+                <view class="info">
+                    <text>菜品数量：{{item.dishNumber}}</text>
+                    <text>绑定设备：{{item.equipment}}台</text>
+                </view>
+            </view>
+            <view class="button">
+                <view class="btn bg-b" data-id="{{item.id}}" catchtap="editItem">编辑</view>
+                <view wx:if="{{item.serialNumber!='001'}}" class="btn bg-r" data-id="{{item.id}}" data-name="{{item.name}}" catchtap="removeItem">删除</view>
+            </view>
+        </view>
+    </view>
+</view>

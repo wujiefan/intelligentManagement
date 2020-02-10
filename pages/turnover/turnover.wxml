@@ -1,0 +1,39 @@
+<!--pages/turnover/turnover.wxml-->
+<view class="container">
+    <switch-canteen bind:canteenChange="canteenChange" />
+    <view class="middle">
+        <view class='search-type'>
+            <view class="search-item {{index==searchActive?'active':''}}" wx:for="{{searchLit}}" wx:key="*this" data-index="{{index}}" bindtap="searchChange">
+                {{item}}
+            </view>
+        </view>
+        <view class="date-pick">
+            <view>单日营业额</view>
+            <view>
+                <picker mode="date" value="{{date}}"  bindchange="dateChange">
+                    <view class="picker">
+                    {{date}}
+                    <image src="/image/date.png"></image>
+                    </view>
+                </picker>
+            </view>
+        </view>
+        <view class="pie-box">
+            <ec-canvas ec="{{ ecPieLine }}"></ec-canvas>
+        </view>
+    </view>
+    <view class="bottom">
+        <view class="trend-type-pick">
+            <view>营业趋势</view>
+            <picker value="{{trendTypeIndex}}" range="{{trendTypeList}}" bindchange="trendTypeChange">
+                <view class="picker">
+                    按{{trendTypeList[trendTypeIndex]}}选择
+                    <view class="arrow-down"></view>
+                </view>
+            </picker>
+        </view>
+        <view class="bar-box" style="height:{{(barData.length*barHeight+barCorrection)+'px'}}">
+            <ec-canvas ec="{{ ecBarLine }}"></ec-canvas>
+        </view>
+    </view>
+</view>

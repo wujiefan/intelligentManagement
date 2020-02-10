@@ -1,0 +1,69 @@
+/**online-order.wxss**/
+.online-order{
+  background-color:#F7F7F7;
+}
+.item-one{
+  padding: 44rpx 40rpx; 
+  box-sizing:border-box;
+  background-color:white;
+}
+.title-aside{
+  font-size:24rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(155,155,155,1);
+  display:inline-block;
+  width:30%;
+}
+.title-center{
+  text-align:center;
+  font-size:24rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(155,155,155,1);
+}
+.item-sum{
+  display:inline-block;
+  width:70%;
+  text-align:right;
+}
+.item-two{
+  padding: 24rpx 40rpx;
+  margin-top: 40rpx;
+  background-color:white;
+}
+.item-right{
+  font-size:12px;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(0,0,0,1);
+  display:inline-block;
+  width: 70%;
+  text-align:right;
+}
+.half{
+  width: 50%;
+}
+.quarter{
+  width: 25%;
+}
+.text-right{
+  text-align:right;
+}
+.text-center{
+  text-align:center;
+}
+.text-left{
+  text-align:left;
+}
+.item-border{
+  border-bottom: 2rpx solid #ddd;
+  margin:40rpx 0;
+}
+.p-right{
+  text-align: right;
+  font-size:24rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  padding-top:10rpx; 
+}

@@ -1,0 +1,18 @@
+<!--pages/canteen/index.wxml-->
+<view class='container'>
+  <view class='head b-f'>
+    <button bindtap="toAdd" class='btn-primary'>新增食堂</button>
+  </view>
+  <view class='content b-f'>
+    <view class='list-line dis-flex' wx:for="{{canteenList}}" wx:key="id">
+      <view class='line-left'>
+        <view>{{item.name}}</view>
+        <view class="col-9 f-28">管理员：{{item.contacts}} {{item.telno}}</view>
+      </view>
+      <view bindtap="toEdit" class='line-right f-30 col-blue' data-id="{{item.id}}">
+        查看
+      </view>
+    </view>
+  </view>
+  
+</view>

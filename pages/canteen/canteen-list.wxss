@@ -1,0 +1,24 @@
+.container{
+  display: block;
+  padding: 0;
+  height: 100vh;
+  background: #f8f8f8;
+}
+.head{
+  padding: 20rpx;
+}
+.content{
+  margin-top: 20rpx;
+}
+.list-line{
+  padding: 20rpx;
+}
+.line-left{
+  width: calc(100% - 100rpx);
+}
+.line-right{
+  width: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

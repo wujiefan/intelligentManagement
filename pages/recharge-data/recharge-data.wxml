@@ -1,0 +1,52 @@
+<!--pages/turnover/turnover.wxml-->
+<view class="container">
+    <view class="header">
+        <picker value="{{departmentIndex}}" range="{{departmentList}}" range-key="name" bindchange="departmentChange">
+            <view class="picker">
+                <text class="menu-icon"></text>
+                {{departmentList[departmentIndex].name}}
+            </view>
+        </picker>
+    </view>
+    <view class="middle">
+        <view class="date-pick">
+            <view>单日充值</view>
+            <view>
+                <picker mode="date" value="{{date}}"  bindchange="dateChange">
+                    <view class="picker">
+                    {{date}}
+                    <image src="/image/date.png"></image>
+                    </view>
+                </picker>
+            </view>
+        </view>
+        <view class="days-info">
+            <view>
+                <view>25</view>
+                <view>充值人数</view>
+            </view>
+            <view>
+                <view>2500</view>
+                <view>充值金额</view>
+            </view>
+            <view>
+                <view>100</view>
+                <view>人均充值</view>
+            </view>
+        </view>
+    </view>
+    <view class="bottom">
+        <view class="trend-type-pick">
+            <view>会员充值趋势</view>
+            <picker value="{{trendTypeIndex}}" range="{{trendTypeList}}" bindchange="trendTypeChange">
+                <view class="picker">
+                    按{{trendTypeList[trendTypeIndex]}}选择
+                    <view class="arrow-down"></view>
+                </view>
+            </picker>
+        </view>
+        <view class="bar-box">
+            <ec-canvas ec="{{ ecBarLine }}"></ec-canvas>
+        </view>
+    </view>
+</view>

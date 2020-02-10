@@ -1,0 +1,15 @@
+<view class="content">
+  <view class='login-title'>效准智能管理系统</view>
+  <view>
+    <label class='form-line'>
+      <text>手机号</text>
+      <input bindinput="changeTel" type="number" value="{{telNo}}"/>
+    </label>
+    <label class='form-line code-box' for='qrCode'>
+      <text>验证码</text>
+      <input bindinput="changeCode" type="text" value="{{qrCode}}" id="qrCode"/>
+      <button catchtap="toCodePage" class='QG-Code' disabled='{{canClick}}'>{{codeText}}</button>
+    </label>
+    <button bindtap="toLogin" class="btn-login">登录</button>
+  </view>
+</view>
